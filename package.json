@@ -1,0 +1,32 @@
+{
+  "name": "extendscript.csv",
+  "version": "0.0.1",
+  "description": "reading csv files in extendscript",
+  "main": "src/main.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fabiantheblind/extendscript.csv.git"
+  },
+  "keywords": [
+    "extendscript",
+    "csv"
+  ],
+  "author": "fabiantheblind",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fabiantheblind/extendscript.csv/issues"
+  },
+  "homepage": "https://github.com/fabiantheblind/extendscript.csv",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-wrap": "^0.3.0",
+    "grunt-contrib-concat": "^0.4.0",
+    "load-grunt-tasks": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-notify": "^0.2.20"
+  }
+}

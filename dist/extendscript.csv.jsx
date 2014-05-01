@@ -1,5 +1,5 @@
 
-/*! extendscript.csv.jsx - v0.0.1 - 2014-04-06 */
+/*! extendscript.csv.jsx - v0.0.1 - 2014-04-29 */
 /*!
  * This is CSV.jsx
  * A collection of functions for reading CSV.

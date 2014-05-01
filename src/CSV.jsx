@@ -64,6 +64,49 @@ CSV.Utilities.split_csv = function(sep, the_string) {
 };
 
 
+CSV.toJSON = function(csvFile , useDialog, seperator){
+    var textFile;
+  var result = [];
+
+    if(useDialog){
+     textFile = File.openDialog("Select a CSV or TSV file to import.", "*.*", false);
+    }else{
+      textFile = csvFile;
+    }
+    var textLines = [];
+    if (textFile !== null) {
+      textFile.open('r', undefined, undefined);
+      while (!textFile.eof) {
+        textLines[textLines.length] = textFile.readln();
+      }
+      textFile.close();
+    }
+    if (textLines.length < 1) {
+      alert("ERROR Reading file");
+      return null;
+    } else {
+
+
+  // var lines=csv.split("\n");
+  var headers= CSV.Utilities.split_csv(textLines[0],seperator);
+
+  for(var i=1;i<textLines.length;i++){
+
+    var obj = {};
+    var currentline=CSV.Utilities.split_csv(textLines[i],seperator);
+
+    for(var j=0;j<headers.length;j++){
+      obj[headers[j]] = currentline[j];
+    }
+
+    result.push(obj);
+
+  }
+
+    }
+  //return result; //JavaScript object
+  return result; //JSON
+};
 
 /**
  * this reads in a file

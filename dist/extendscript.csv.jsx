@@ -1,5 +1,5 @@
 
-/*! extendscript.csv.jsx - v0.0.1 - 2014-04-29 */
+/*! extendscript.csv.jsx - v0.0.1 - 2014-05-01 */
 /*!
  * This is CSV.jsx
  * A collection of functions for reading CSV.
@@ -23,6 +23,11 @@
  *
  * see also http://www.opensource.org/licenses/mit-license.php
  */
+if(DEBUG === undefined){
+  var DEBUG = true;
+}else{
+  DEBUG = true;
+}
 CSV = function() {};
 // END OF CSV.js
 
@@ -66,6 +71,49 @@ CSV.Utilities.split_csv = function(sep, the_string) {
 };
 
 
+CSV.toJSON = function(csvFile, useDialog, separator) {
+  var textFile;
+  var result = [];
+  if (useDialog) {
+    textFile = File.openDialog("Select a CSV or TSV file to import.", "*.*", false);
+  } else {
+    textFile = csvFile;
+  }
+  var textLines = [];
+  if (textFile !== null) {
+    textFile.open('r', undefined, undefined);
+    while (!textFile.eof) {
+      textLines[textLines.length] = textFile.readln();
+    }
+    textFile.close();
+  }
+  if (textLines.length < 1) {
+    alert("ERROR Reading file");
+    return null;
+  } else {
+
+    $.writeln(textLines);
+    // var lines=csv.split("\n");
+    var headers = CSV.Utilities.split_csv(separator, textLines[0]);
+    if(DEBUG) $.writeln(headers);
+    for (var i = 1; i < textLines.length; i++) {
+
+      var obj = {};
+      var currentline = CSV.Utilities.split_csv( separator, textLines[i]);
+
+      for (var j = 0; j < headers.length; j++) {
+        obj[headers[j]] = currentline[j];
+      }
+      if (DEBUG) $.writeln(obj.toSource());
+      result.push(obj);
+
+    }
+
+  }
+  // alert(result[0].toSource());
+  //return result; //JavaScript object
+  return result; //JSON
+};
 
 /**
  * this reads in a file
@@ -123,7 +171,7 @@ CSV.reader = {
           }
         }
         // var parsedData = JSON.parse("{"+ obj_str+"}");
-        data.fields.push(eval("({" + obj_str + "})"));
+        data.fields.push(eval("({" + obj_str + "})")); // jshint ignore:line
 
       }
     }

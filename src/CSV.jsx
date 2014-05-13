@@ -1,4 +1,5 @@
 /*!
+ *
  * This is CSV.jsx
  * A collection of functions for reading CSV.
  * As used in Locations.jsx
@@ -21,11 +22,11 @@
  *
  * see also http://www.opensource.org/licenses/mit-license.php
  */
-if(DEBUG === undefined){
-  var DEBUG = true;
-}else{
-  DEBUG = true;
-}
+// if(DEBUG === undefined){
+//   var DEBUG = true;
+// }else{
+//   DEBUG = true;
+// }
 CSV = function() {};
 // END OF CSV.js
 

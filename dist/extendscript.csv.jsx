@@ -23,11 +23,7 @@
  *
  * see also http://www.opensource.org/licenses/mit-license.php
  */
-if(DEBUG === undefined){
-  var DEBUG = true;
-}else{
-  DEBUG = true;
-}
+
 CSV = function() {};
 // END OF CSV.js
 

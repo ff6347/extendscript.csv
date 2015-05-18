@@ -1,6 +1,7 @@
 
-/*! extendscript.csv.jsx - v0.0.1 - 2014-05-01 */
+/*! extendscript.csv.jsx - v0.0.1 - 2015-05-18 */
 /*!
+ *
  * This is CSV.jsx
  * A collection of functions for reading CSV.
  * As used in Locations.jsx
@@ -23,11 +24,11 @@
  *
  * see also http://www.opensource.org/licenses/mit-license.php
  */
-if(DEBUG === undefined){
-  var DEBUG = true;
-}else{
-  DEBUG = true;
-}
+// if(DEBUG === undefined){
+//   var DEBUG = true;
+// }else{
+//   DEBUG = true;
+// }
 CSV = function() {};
 // END OF CSV.js
 
@@ -70,7 +71,19 @@ CSV.Utilities.split_csv = function(sep, the_string) {
   return foo;
 };
 
+CSV.readFile = function(){
 
+  var csvfile = File.openDialog("Select your CSV file");
+  if (csvfile !== null) {
+    csvfile.open('r');
+    var content = csvfile.read();
+    csvfile.close();
+    return content;
+  } else {
+    if (DEBUG) $.writeln("user aborted CSV.readFile");
+  }
+
+};
 CSV.toJSON = function(csvFile, useDialog, separator) {
   var textFile;
   var result = [];

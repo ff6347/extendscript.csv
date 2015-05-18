@@ -67,7 +67,7 @@ module.exports = function (grunt) {
   // // This is required if you use any options.
   grunt.task.run('notify_hooks');
 
-  grunt.registerTask('build-dist', ['concat:dist', 'copy:script']);
+  grunt.registerTask('build', ['concat:dist', 'copy:script']);
   grunt.registerTask('build-dev', ['concat:dist', 'copy:scriptdev']);
 
   // Default task.

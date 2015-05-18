@@ -69,7 +69,19 @@ CSV.Utilities.split_csv = function(sep, the_string) {
   return foo;
 };
 
+CSV.readFile = function(){
 
+  var csvfile = File.openDialog("Select your CSV file");
+  if (csvfile !== null) {
+    csvfile.open('r');
+    var content = csvfile.read();
+    csvfile.close();
+    return content;
+  } else {
+    if (DEBUG) $.writeln("user aborted CSV.readFile");
+  }
+
+};
 CSV.toJSON = function(csvFile, useDialog, separator) {
   var textFile;
   var result = [];

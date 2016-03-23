@@ -1,5 +1,5 @@
 
-/*! extendscript.csv.jsx - v0.0.1 - 2015-05-18 */
+/*! extendscript.csv.jsx - v0.0.1 - 2016-03-23 */
 /*!
  *
  * This is CSV.jsx

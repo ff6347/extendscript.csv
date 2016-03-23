@@ -1,10 +1,11 @@
 {
   "name": "extendscript.csv",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "reading csv files in extendscript",
-  "main": "src/main.jsx",
+  "main": "/dist/extendscript.csv.jsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "grunt":"./node_modules/.bin/grunt"
   },
   "repository": {
     "type": "git",
@@ -22,11 +23,12 @@
   "homepage": "https://github.com/fabiantheblind/extendscript.csv",
   "devDependencies": {
     "grunt": "^0.4.4",
-    "grunt-contrib-copy": "^0.5.0",
-    "grunt-wrap": "^0.3.0",
+    "grunt-cli": "^1.1.0",
     "grunt-contrib-concat": "^0.4.0",
-    "load-grunt-tasks": "^0.4.0",
+    "grunt-contrib-copy": "^0.5.0",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-notify": "^0.2.20"
+    "grunt-notify": "^0.2.20",
+    "grunt-wrap": "^0.3.0",
+    "load-grunt-tasks": "^0.4.0"
   }
 }

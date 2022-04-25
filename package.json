@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/fabiantheblind/extendscript.csv",
   "devDependencies": {
-    "grunt": "1.4.0",
+    "grunt": "1.5.2",
     "grunt-cli": "1.4.2",
     "grunt-contrib-concat": "1.0.1",
     "grunt-contrib-copy": "0.8.2",
